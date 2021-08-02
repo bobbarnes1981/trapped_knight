@@ -25,11 +25,14 @@ namespace TrappedKnight
 
         private bool finished = false;
 
-        public Visualisation(Simulation simulation, int screenWidth, int screenHeight)
+        private IColourChooser colourChooser;
+
+        public Visualisation(Simulation simulation, int screenWidth, int screenHeight, IColourChooser colourChooser)
         {
             this.simulation = simulation;
             this.screenWidth = screenWidth;
             this.screenHeight = screenHeight;
+            this.colourChooser = colourChooser;
 
             font = new SdlDotNet.Graphics.Font("C:\\Windows\\Fonts\\ARIAL.TTF", 12);
         }
@@ -117,14 +120,10 @@ namespace TrappedKnight
             // draw history
             if (simulation.History.Count > 1)
             {
-                float step = 255f / (float)(simulation.History.Count);
-                float offset = 255;
-                Color c = Color.FromArgb((int)offset, 255, 0);
+                colourChooser.Init(simulation.History.Count);
                 for (int h = simulation.History.Count-1; h > 0; h--)
                 {
-                    video.Draw(new Line(new Point((simulation.History[h].X * sx) + (sx / 2), (simulation.History[h].Y * sy) + (sy / 2)), new Point((simulation.History[h-1].X * sx) + (sx / 2), (simulation.History[h-1].Y * sy) + (sy / 2))), c);
-                    c = Color.FromArgb((int)offset, 255, 0);
-                    offset -= step;
+                    video.Draw(new Line(new Point((simulation.History[h].X * sx) + (sx / 2), (simulation.History[h].Y * sy) + (sy / 2)), new Point((simulation.History[h-1].X * sx) + (sx / 2), (simulation.History[h-1].Y * sy) + (sy / 2))), colourChooser.NextColour());
                 }
             }
 
