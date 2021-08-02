@@ -47,6 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AntiClockwiseGridGenerator.cs" />
+    <Compile Include="CustomMoveGenerator3.cs" />
+    <Compile Include="CustomMoveGenerator2.cs" />
+    <Compile Include="IGridGenerator.cs" />
+    <Compile Include="IMoveFilter.cs" />
+    <Compile Include="IMoveGenerator.cs" />
+    <Compile Include="CustomMoveGenerator.cs" />
+    <Compile Include="CustomMoveGenerator4.cs" />
+    <Compile Include="KnightMoveGenerator2.cs" />
+    <Compile Include="KnightMoveGenerator3.cs" />
+    <Compile Include="KnightMoveGenerator.cs" />
+    <Compile Include="HighestUnusedValueMoveFilter.cs" />
+    <Compile Include="LowestUnusedValueMoveFilter.cs" />
     <Compile Include="Visualisation.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="Program.cs" />

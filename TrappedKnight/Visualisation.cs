@@ -98,7 +98,7 @@ namespace TrappedKnight
                 video.Draw(new Box(new Point(simulation.NextMove.X * sx, simulation.NextMove.Y * sy), new Size(sx, sy)), Color.Green, false, true);
                 for (int c = 0; c < simulation.Moves.GetLength(0); c++)
                 {
-                    video.Draw(new Line(new Point((simulation.Knight.X * sx) + (sx / 2), (simulation.Knight.Y * sy) + (sx / 2)), new Point((simulation.Moves[c, 0] * sx) + (sx / 2), (simulation.Moves[c, 1] * sy) + (sx / 2))), Color.Magenta);
+                    video.Draw(new Line(new Point((simulation.Knight.X * sx) + (sx / 2), (simulation.Knight.Y * sy) + (sx / 2)), new Point((simulation.Moves[c].X * sx) + (sx / 2), (simulation.Moves[c].Y * sy) + (sx / 2))), Color.Magenta);
                 }
             }
 
