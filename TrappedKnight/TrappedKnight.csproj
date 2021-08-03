@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AntiClockwiseGridGenerator.cs" />
+    <Compile Include="PurpleCyanYellowColourChooser.cs" />
     <Compile Include="GreenYellowColourChooser.cs" />
     <Compile Include="ColourChooser.cs" />
     <Compile Include="CustomMoveGenerator3.cs" />
